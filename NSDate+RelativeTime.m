@@ -25,37 +25,37 @@ const int YEAR = DAY*365;
     BOOL dateInFuture = ([self timeIntervalSinceDate:currentDate] > 0);
     
     if(deltaSeconds < MINUTE) {
-        return [self formattedStringForCurrentDate:currentDate count:deltaSeconds past:@"%d seconds ago" future:@"%d seconds"];
+        return [self formattedStringForCurrentDate:currentDate count:deltaSeconds past:@"%d seconds" future:@"%d seconds"];
     } else if(deltaSeconds < 1.5*MINUTE) {
-        return !dateInFuture ? [self NSDateRelativeTimeLocalizedStrings: @"a minute ago"] : [self NSDateRelativeTimeLocalizedStrings: @"minute"];
+        return !dateInFuture ? [self NSDateRelativeTimeLocalizedStrings: @"minute"] : [self NSDateRelativeTimeLocalizedStrings: @"minute"];
     } else if(deltaSeconds < HOUR) {
         int minutes = (int)lroundf((float)deltaSeconds/(float)MINUTE);
-        return [self formattedStringForCurrentDate:currentDate count:minutes past:@"%d minutes ago" future:@"%d minutes"];
+        return [self formattedStringForCurrentDate:currentDate count:minutes past:@"%d minutes" future:@"%d minutes"];
     } else if(deltaSeconds < 1.5*HOUR) {
-        return !dateInFuture ? [self NSDateRelativeTimeLocalizedStrings: @"An hour ago"] : [self NSDateRelativeTimeLocalizedStrings: @"hour"];
+        return !dateInFuture ? [self NSDateRelativeTimeLocalizedStrings: @"hour"] : [self NSDateRelativeTimeLocalizedStrings: @"hour"];
     } else if(deltaSeconds < DAY) {
         int hours = (int)lroundf((float)deltaSeconds/(float)HOUR);
-        return [self formattedStringForCurrentDate:currentDate count:hours past:@"%d hours ago" future:@"%d hours"];
+        return [self formattedStringForCurrentDate:currentDate count:hours past:@"%d hours" future:@"%d hours"];
     } else if(deltaSeconds < 1.5*DAY) {
-        return !dateInFuture ? [self NSDateRelativeTimeLocalizedStrings: @"a day ago"] : [self NSDateRelativeTimeLocalizedStrings: @"day"];
+        return !dateInFuture ? [self NSDateRelativeTimeLocalizedStrings: @"day"] : [self NSDateRelativeTimeLocalizedStrings: @"day"];
     } else if(deltaSeconds < WEEK) {
         int days = (int)lroundf((float)deltaSeconds/(float)DAY);
-        return [self formattedStringForCurrentDate:currentDate count:days past:@"%d days ago" future:@"%d days"];
+        return [self formattedStringForCurrentDate:currentDate count:days past:@"%d days" future:@"%d days"];
     } else if(deltaSeconds < 1.5*WEEK) {
-        return !dateInFuture ? [self NSDateRelativeTimeLocalizedStrings: @"a week ago"] : [self NSDateRelativeTimeLocalizedStrings: @"week"];
+        return !dateInFuture ? [self NSDateRelativeTimeLocalizedStrings: @"week"] : [self NSDateRelativeTimeLocalizedStrings: @"week"];
     } else if(deltaSeconds < MONTH) {
         int weeks = (int)lroundf((float)deltaSeconds/(float)WEEK);
-        return [self formattedStringForCurrentDate:currentDate count:weeks past:@"%d weeks ago" future:@"%d weeks"];
+        return [self formattedStringForCurrentDate:currentDate count:weeks past:@"%d weeks" future:@"%d weeks"];
     } else if(deltaSeconds < 1.5*MONTH) {
-        return !dateInFuture ? [self NSDateRelativeTimeLocalizedStrings: @"a month ago"] : [self NSDateRelativeTimeLocalizedStrings: @"month"];
+        return !dateInFuture ? [self NSDateRelativeTimeLocalizedStrings: @"month"] : [self NSDateRelativeTimeLocalizedStrings: @"month"];
     } else if(deltaSeconds < YEAR) {
         int months = (int)lroundf((float)deltaSeconds/(float)MONTH);
-        return [self formattedStringForCurrentDate:currentDate count:months past:@"%d months ago" future:@"%d months"];
+        return [self formattedStringForCurrentDate:currentDate count:months past:@"%d months" future:@"%d months"];
     } else if(deltaSeconds < 1.5*YEAR) {
-        return !dateInFuture ? [self NSDateRelativeTimeLocalizedStrings: @"a year ago"] : [self NSDateRelativeTimeLocalizedStrings: @"year"];
+        return !dateInFuture ? [self NSDateRelativeTimeLocalizedStrings: @"year"] : [self NSDateRelativeTimeLocalizedStrings: @"year"];
     } else {
         int years = (int)lroundf((float)deltaSeconds/(float)YEAR);
-        return [self formattedStringForCurrentDate:currentDate count:years past:@"%d years ago" future:@"%d years"];
+        return [self formattedStringForCurrentDate:currentDate count:years past:@"%d years" future:@"%d years"];
     }
 }
 
